@@ -28,33 +28,54 @@ def dataprep_sum_pair_hit(n):
     """Genera un caso donde SÍ existe un par que suma target.
     Devuelve una tupla (lista, target)
     """
-    pass
+    lista = list(range(n))
+    target = list[n-1] + list[n-2]
+
+    return (lista, target)
 
 def dataprep_sum_pair_miss(n):
     """Genera un caso donde NO existe ningún par (Caso peor).
     Devuelve una tupla (lista, target)
     """
-    pass
+    lista = list(range(n))
+    target = list[n-1] + list[n-1]
+    return (lista, target)
 
 def dataprep_rle(n):
     """Genera una lista con rachas repetidas de dimensión n.
     Devuelve una lista.
     """
-    pass
+    
+    return lst
 
 # I.A.2 Búsqueda de duplicados manteniendo orden de aparición
 def find_duplicates(lst):
-    """Devuelve los elementos que aparecen más de una vez en lst,
+    """Devuelve los elementos que aparecen más de una vez en lst
     preservando el orden de su primera repetición y sin duplicados.
     """
-    pass
+    seen = set()
+    duplicates = list()
+
+    for e in lst:
+        if e in seen and e not in duplicates:
+            duplicates.append(e)
+        else:
+            seen.add(e)
+
+    return duplicates  
 
 # I.A.3 Búsqueda de par que suma target con complejidad O(n)
 def has_sum_pair(par):
     """Dada una tupla (lst, target), devuelve True si existen dos elementos
     distintos en lst que sumen target; de lo contrario devuelve False.
     """
-    pass
+    lst, target = par
+    seen = set()
+    for e in lst:
+        if target - e in seen:
+            return True
+        seen.add(e)
+    return False
 
 # I.B.1 RLE Naive / Ingenuo
 def rle_encode_naive(lst):
